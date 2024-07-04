@@ -1,0 +1,8 @@
+{
+  "name": "steal",
+  "short_name": "steal",
+  "lang": "en-US",
+  "start_url": "/",
+  "display": "standalone",
+  "scope": "/"
+}
