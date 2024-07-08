@@ -13,7 +13,7 @@ export default function Page({ params }: { params: { page: string } }) {
           <Link href='/' className='hover:text-cb-pink'>
             <Title>steal</Title>
           </Link>
-          <p>that page doesn't exist. try one of the pages below</p>
+          <p>that page does not exist. try one of the pages below</p>
           <ul className='flex space-x-4'>
             {pageKeys.map(pageKey => (
               <li key={pageKey}>
