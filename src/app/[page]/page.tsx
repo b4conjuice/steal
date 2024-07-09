@@ -50,11 +50,12 @@ export default function Page({ params }: { params: { page: string } }) {
     >
       <PageComponent />
       <footer className='sticky bottom-0 flex justify-end p-4'>
-        <div className='flex h-12 w-12 items-center justify-center rounded-full bg-cobalt text-cb-white'>
-          <Link href='/' className='text-cb-yellow hover:text-cb-yellow/75'>
-            <HomeIcon className='h-6 w-6' />
-          </Link>
-        </div>
+        <Link
+          href='/'
+          className='flex h-12 w-12 items-center justify-center rounded-full bg-cobalt text-cb-yellow hover:text-cb-yellow/75'
+        >
+          <HomeIcon className='h-6 w-6' />
+        </Link>
       </footer>
     </div>
   )
