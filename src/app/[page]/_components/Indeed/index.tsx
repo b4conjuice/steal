@@ -3,50 +3,103 @@ import {
   BellIcon,
   ChatBubbleBottomCenterTextIcon,
   UserIcon,
+  AcademicCapIcon,
+  EllipsisHorizontalIcon,
 } from '@heroicons/react/24/solid'
 import Link from 'next/link'
 
 import { Main } from '@/components/ui'
 import Logo from './Logo'
 
+const ChatNotificationIcon = () => (
+  <div>
+    <div className='rounded bg-blue-500 p-1'>
+      <ChatBubbleBottomCenterTextIcon className='h-5 w-5 text-white' />
+    </div>
+  </div>
+)
+const HatNotificationIcon = () => (
+  <div>
+    <div className='rounded bg-green-500 p-1'>
+      <AcademicCapIcon className='h-5 w-5 text-white' />
+    </div>
+  </div>
+)
+
 const notifications = [
   {
-    icon: {
-      backgroundColorClassName: 'bg-blue-500',
-      Component: () => <p />,
-    },
+    type: 'test',
+    Icon: ChatNotificationIcon,
     title:
       'Almost done--Atlantis IT Group is waiting on your skills test results',
-    description: '',
+    description:
+      'This skills test will take about 7 minutes to complete. Finishing the test will increase your chances of getting an interview by 80%',
     date: '',
   },
   {
-    icon: {
-      backgroundColorClassName: 'bg-blue-500',
-      Component: () => <p />,
-    },
-    title: 'Almost done--InLumon is waiting on your skills test results',
-    description: '',
-    date: '',
-  },
-  {
-    icon: {
-      backgroundColorClassName: 'bg-blue-500',
-      Component: () => <p />,
-    },
-    title:
-      'Almost done--IT Resources Innovations, LCC is waiting on your skills test results',
-    description: '',
-    date: '',
-  },
-  {
-    icon: {
-      backgroundColorClassName: 'bg-green-500',
-      Component: () => <p />,
-    },
+    type: 'message',
+    Icon: HatNotificationIcon,
     title: "Haven't heard back?",
-    description: '',
+    description:
+      'You are more likely to hear back on your application if you follow up with a message.',
     date: '',
+    listing: {
+      role: 'Principal Software Engineer',
+      company: 'rqconsultancy',
+      location: 'Remote',
+    },
+  },
+  {
+    type: 'message',
+    Icon: HatNotificationIcon,
+    title: "Haven't heard back?",
+    description:
+      'You are more likely to hear back on your application if you follow up with a message.',
+    date: '',
+    listing: {
+      role: 'UiPath Developer',
+      company: 'Genpact',
+      location: 'Remote',
+    },
+  },
+  {
+    type: 'message',
+    Icon: HatNotificationIcon,
+    title: "Haven't heard back?",
+    description:
+      'You are more likely to hear back on your application if you follow up with a message.',
+    date: '',
+    listing: {
+      role: 'Software Engineer (Full Stack)',
+      company: 'Dogwood Logic Inc.',
+      location: 'Remote',
+    },
+  },
+  {
+    type: 'message',
+    Icon: HatNotificationIcon,
+    title: "Haven't heard back?",
+    description:
+      'You are more likely to hear back on your application if you follow up with a message.',
+    date: '',
+    listing: {
+      role: 'Front End Web Developer',
+      company: 'First Arriving',
+      location: 'Remote',
+    },
+  },
+  {
+    type: 'message',
+    Icon: HatNotificationIcon,
+    title: "Haven't heard back?",
+    description:
+      'You are more likely to hear back on your application if you follow up with a message.',
+    date: '',
+    listing: {
+      role: 'Senior Software Developer',
+      company: 'Brooksource',
+      location: 'Remote',
+    },
   },
 ]
 
@@ -101,8 +154,36 @@ export default function IndeedPage() {
             // ...notifications,
           ].map(notification => (
             <li key={notification.title}>
-              <h2>{notification.title}</h2>
-              <p>{notification.description}</p>
+              <a
+                href='#'
+                className='flex space-x-3 rounded p-2 transition hover:bg-gray-200'
+              >
+                <notification.Icon />
+                {notification.type === 'test' ? (
+                  <div>
+                    <h2 className='font-bold'>{notification.title}</h2>
+                    <p>{notification.description}</p>
+                  </div>
+                ) : (
+                  <div className='space-y-2'>
+                    <p>
+                      <span className='font-bold'>{notification.title}</span>{' '}
+                      <span>{notification.description}</span>
+                    </p>
+                    <div className='rounded-lg border border-gray-200 p-4'>
+                      <h3 className='font-bold'>
+                        {notification.listing?.role}
+                      </h3>
+                      <p>{notification.listing?.company}</p>
+                      <p>{notification.listing?.location}</p>
+                    </div>
+                  </div>
+                )}
+                <div>
+                  <div>5d</div>
+                  <EllipsisHorizontalIcon className='h-6 w-6' />
+                </div>
+              </a>
             </li>
           ))}
         </ul>

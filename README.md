@@ -30,6 +30,6 @@ Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/ver
 
 ## TODO
 
-- [ ] indeed
-  - [ ] fix notifications design
+- [x] indeed
+  - [x] fix notifications design
 - [ ]
