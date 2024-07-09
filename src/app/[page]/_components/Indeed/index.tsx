@@ -34,7 +34,7 @@ const notifications = [
       'Almost done--Atlantis IT Group is waiting on your skills test results',
     description:
       'This skills test will take about 7 minutes to complete. Finishing the test will increase your chances of getting an interview by 80%',
-    date: '',
+    ago: '5d',
   },
   {
     type: 'message',
@@ -42,7 +42,7 @@ const notifications = [
     title: "Haven't heard back?",
     description:
       'You are more likely to hear back on your application if you follow up with a message.',
-    date: '',
+    ago: '6d',
     listing: {
       role: 'Principal Software Engineer',
       company: 'rqconsultancy',
@@ -55,7 +55,7 @@ const notifications = [
     title: "Haven't heard back?",
     description:
       'You are more likely to hear back on your application if you follow up with a message.',
-    date: '',
+    ago: '1w',
     listing: {
       role: 'UiPath Developer',
       company: 'Genpact',
@@ -68,7 +68,7 @@ const notifications = [
     title: "Haven't heard back?",
     description:
       'You are more likely to hear back on your application if you follow up with a message.',
-    date: '',
+    ago: '1w',
     listing: {
       role: 'Software Engineer (Full Stack)',
       company: 'Dogwood Logic Inc.',
@@ -81,7 +81,7 @@ const notifications = [
     title: "Haven't heard back?",
     description:
       'You are more likely to hear back on your application if you follow up with a message.',
-    date: '',
+    ago: '1w',
     listing: {
       role: 'Front End Web Developer',
       company: 'First Arriving',
@@ -94,7 +94,7 @@ const notifications = [
     title: "Haven't heard back?",
     description:
       'You are more likely to hear back on your application if you follow up with a message.',
-    date: '',
+    ago: '1w',
     listing: {
       role: 'Senior Software Developer',
       company: 'Brooksource',
@@ -180,7 +180,7 @@ export default function IndeedPage() {
                   </div>
                 )}
                 <div>
-                  <div>5d</div>
+                  <div>{notification.ago}</div>
                   <EllipsisHorizontalIcon className='h-6 w-6' />
                 </div>
               </a>
