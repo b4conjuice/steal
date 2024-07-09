@@ -19,7 +19,7 @@ export default function Home() {
               </Link>{' '}
               -{' '}
               <a
-                href={String(pages[pageKey]?.original) ?? ''}
+                href={pages[pageKey]?.original}
                 target='_blank'
                 className='text-cb-mint hover:text-cb-mint/75'
               >

@@ -1,7 +1,12 @@
 import CSTimerPage from '@/app/[page]/_components/CSTimer'
 import IndeedPage from '@/app/[page]/_components/Indeed'
 
-export const pages: Record<string, Record<string, React.FC | string>> = {
+type Page = {
+  Component: React.FC
+  original: string
+}
+
+export const pages: Record<string, Page> = {
   indeed: {
     Component: IndeedPage,
     original:

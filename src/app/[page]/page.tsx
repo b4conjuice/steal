@@ -26,7 +26,7 @@ export default function Page({ params }: { params: { page: string } }) {
                 </Link>{' '}
                 -{' '}
                 <a
-                  href={String(pages[pageKey]?.original) ?? ''}
+                  href={pages[pageKey]?.original}
                   target='_blank'
                   className='text-cb-orange hover:text-cb-orange/75'
                 >
