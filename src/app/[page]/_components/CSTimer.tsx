@@ -55,9 +55,23 @@ export default function CSTimerPage() {
         </ul>
       </aside>
       <main className='flex-grow'>
-        <div className='bg-[#3b5494]'>{scramble}</div>
-        <div>20.20 (+1.42)</div>
-        <div>
+        <div className='bg-[#3b5494] text-center'>
+          <div className='flex justify-center space-x-4'>
+            <select className='bg-cb-dark-blue'>
+              <option>WCA</option>
+            </select>
+            <select className='bg-cb-dark-blue'>
+              <option>3x3x3</option>
+            </select>
+            <div>last/next scramble</div>
+          </div>
+          <div className='text-xl'>{scramble}</div>
+        </div>
+        <div className='py-10 text-center'>
+          <span className='text-9xl'>20.20</span>{' '}
+          <span className='text-4xl'>(+1.42)</span>
+        </div>
+        <div className='text-center'>
           <div>ao12: 18.35</div>
           <div>ao1000: -</div>
         </div>
