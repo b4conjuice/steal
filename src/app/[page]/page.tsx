@@ -2,6 +2,7 @@ import Link from 'next/link'
 
 import { Main, Title } from '@/components/ui'
 import { pages, pageKeys } from '@/lib/pages'
+import { HomeIcon } from '@heroicons/react/24/solid'
 
 export default function Page({ params }: { params: { page: string } }) {
   const currentPage = pageKeys.find(page => page === params.page)
@@ -42,8 +43,10 @@ export default function Page({ params }: { params: { page: string } }) {
     <>
       <PageComponent />
       <footer className='sticky bottom-0 flex justify-end p-4'>
-        <div className='h-16 w-16 rounded-full bg-cobalt text-cb-white'>
-          <Link href='/'>home</Link>
+        <div className='flex h-12 w-12 items-center justify-center rounded-full bg-cobalt text-cb-white'>
+          <Link href='/' className='text-cb-yellow hover:text-cb-yellow/75'>
+            <HomeIcon className='h-6 w-6' />
+          </Link>
         </div>
       </footer>
     </>
