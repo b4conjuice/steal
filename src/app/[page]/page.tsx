@@ -1,12 +1,14 @@
 import Link from 'next/link'
+import classNames from 'classnames'
+import { HomeIcon } from '@heroicons/react/24/solid'
 
 import { Main, Title } from '@/components/ui'
 import { pages, pageKeys } from '@/lib/pages'
-import { HomeIcon } from '@heroicons/react/24/solid'
 
 export default function Page({ params }: { params: { page: string } }) {
-  const currentPage = pageKeys.find(page => page === params.page)
-  const PageComponent = currentPage ? pages[currentPage]?.Component : undefined
+  const currentPageKey = pageKeys.find(page => page === params.page)
+  const currentPage = currentPageKey ? pages[currentPageKey] : undefined
+  const PageComponent = currentPage?.Component
   if (!PageComponent) {
     return (
       <Main className='flex flex-col bg-cb-dark-blue p-4 text-cb-white'>
@@ -40,7 +42,12 @@ export default function Page({ params }: { params: { page: string } }) {
     )
   }
   return (
-    <>
+    <div
+      className={classNames(
+        'flex flex-grow flex-col',
+        currentPage?.backgroundClassName
+      )}
+    >
       <PageComponent />
       <footer className='sticky bottom-0 flex justify-end p-4'>
         <div className='flex h-12 w-12 items-center justify-center rounded-full bg-cobalt text-cb-white'>
@@ -49,6 +56,6 @@ export default function Page({ params }: { params: { page: string } }) {
           </Link>
         </div>
       </footer>
-    </>
+    </div>
   )
 }

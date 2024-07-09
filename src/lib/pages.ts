@@ -4,6 +4,7 @@ import IndeedPage from '@/app/[page]/_components/Indeed'
 type Page = {
   Component: React.FC
   original: string
+  backgroundClassName?: string
 }
 
 export const pages: Record<string, Page> = {
@@ -15,6 +16,7 @@ export const pages: Record<string, Page> = {
   cstimer: {
     Component: CSTimerPage,
     original: 'https://cstimer.net/',
+    backgroundClassName: 'bg-black',
   },
 }
 
